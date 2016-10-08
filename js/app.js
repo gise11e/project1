@@ -1,12 +1,4 @@
 
-
-function showTab(tabName) {
-
-	var instructions = document.getElementById('instructions');
-	var game = document.getElementById('game');
-
-}
-
 var gameBoard = document.getElementById('game-board');
 
 var cards = [];
@@ -49,7 +41,6 @@ function setUpCards(totalPairs){
 	}
 }
 
-
 function isMatch(selectedCards) {
 
 	if( selectedCards[0].getAttribute('data-card') == selectedCards[1].getAttribute('data-card') )
@@ -60,8 +51,6 @@ function isMatch(selectedCards) {
 var won = false;
 
 function resetBoard() {
-
-
 	won = false;
 	var bodyElements = document.getElementsByTagName('body');
 	bodyElements[0].className = 'level-' + level;
@@ -79,6 +68,8 @@ function resetBoard() {
     }
 }
 
+var glissando = new Audio("sounds/harp_chord_glissando.mp3");
+
 function isTwoCards() {
 
   if (!safeToPlay) {
@@ -91,7 +82,6 @@ function isTwoCards() {
 
   cardsInPlay.push(cardElement);
 
-
   cardElement.innerHTML = '<img src="images/' + typeOfCard + '.gif" alt="' + typeOfCard + ' playing card"/>';
 
   if (cardsInPlay.length == 2) {
@@ -102,7 +92,6 @@ function isTwoCards() {
 
     	totalMatches += 1;
 
-
     	if (totalMatches == (levelPairs[level])) {
 
 				if (level == levelPairs.length-1) {
@@ -111,12 +100,10 @@ function isTwoCards() {
 				}
 				else{
 				  messageDiv.innerHTML = '<div class="levelup"> level ^ ! </div>';
-					setTimeout(function(){
-						level++;
-						resetBoard();
-					},3000);
+					level++;
+					transitionOut(resetBoard);
+					glissando.play();
 				}
-
     	}
     }
 		    else {
@@ -133,11 +120,8 @@ function isTwoCards() {
 		    safeToPlay = true;
     	}, 1000);
     }
-
   }
-
 }
-
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -168,4 +152,18 @@ for (var i=1; i<3; i++) {
 	})(i));
 }
 
-document.getElementById('reset').addEventListener('click', function() { level=0; resetBoard(); });
+document.getElementById('reset').addEventListener('click', function() { level=0;resetBoard();});
+
+
+function transitionOut(callback) {
+	var $lis = $(gameBoard).children();
+	var total = $lis.length;
+	$.each($lis,function(i,li){
+		if (i == total-1){
+			$(li).fadeOut(500*(i+1), callback);
+		}
+		else{
+			$(li).fadeOut(500*(i+1));
+		}
+	});
+}

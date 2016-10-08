@@ -36,7 +36,7 @@ ul {
   font-family: wire-one, sans-serif;
   font-size: 40px;
   border: 5px dash #efb6e2;
-  float: right;
+  float: left;
   list-style: none;
   margin-top: -20px;
   margin-right: 25px;
@@ -48,8 +48,9 @@ ul {
 #message {
   font-size: 50px;
   color:#444547;
-  margin: 40px 0;
+  margin: 40px 50px  40px 0;
   font-family: wire-one, sans-serif;
+  float: right;
 }
 .board{
   display: block;
@@ -97,8 +98,12 @@ span{
   background-image: url(../images/newlevel.gif);
   background-repeat:no-repeat;
   background-size:contain;
-  margin-left: 400px;
+  background-position: right center;
+  margin-left: 200px;
+  margin-right: 80px;
   padding: 50px;
+  padding-right: 250px;
+  float: right;
 }
 
 .clearfix:after {
@@ -109,3 +114,24 @@ span{
         height: 0;
         font-size: 0;
       }
+
+      .grid {
+        width: 1111px;
+        margin: 0 0 60px 0 auto;
+        padding: 0;
+        list-style: none;
+      }
+
+      .grid li {
+        width: 50px;
+        height: 100px;
+        float: left;
+        margin: 0;
+        padding: 0;
+      }
+
+      .pink    { background: #efb6e2; }
+      .gray  { background: #444547; }
+      .green  { background: #F56991; }
+      .red { background: #E5FFBC; }
+      .yellow   { background: #F5EA42; }
