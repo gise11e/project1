@@ -1,3 +1,9 @@
+
+html {
+  cursor: url(../images/smiley.png),auto;
+
+}
+
 .level-1 .board {
   max-width: 900px;
   margin: 0 10px 0 100px;
@@ -33,7 +39,11 @@ ul {
   float: right;
   list-style: none;
   margin-top: -20px;
+  margin-right: 25px;
+
 }
+
+
 
 #message {
   font-size: 50px;
