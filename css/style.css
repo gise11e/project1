@@ -1,0 +1,101 @@
+.level-1 .board {
+  max-width: 900px;
+  margin: 0 10px 0 100px;
+}
+
+.level-2 .board {
+  max-width: 1200px;
+  margin: 0 10px 0 10px;
+  width: 90%;
+
+
+}
+
+h1{
+  /*color:#F56991;*/
+  color: #efb6e2;
+  font-family: flavors, sans-serif;
+  font-size: 100px;
+  font-kerning: 30px;
+  text-align: center;
+
+}
+
+#controls {
+  text-align: center;
+}
+
+ul {
+  color: #efb6e2;
+  font-family: wire-one, sans-serif;
+  font-size: 40px;
+  border: 5px dash #efb6e2;
+  float: right;
+  list-style: none;
+  margin-top: -20px;
+}
+
+#message {
+  font-size: 50px;
+  color:#444547;
+  margin: 40px 0;
+  font-family: wire-one, sans-serif;
+}
+.board{
+  display: block;
+  height: 80%;
+  width: 100%;
+  max-width: 1111px;
+  margin: 0 25px 0 20px;
+  overflow: hidden;
+}
+@media (max-width: 650px) {
+  .board {
+    width: 330px;
+  }
+}
+.card{
+  float: right;
+  height: 190px;
+  width: 140px;
+  border: 1px solid #000000;
+  background-color: rgb(255,255,0);
+  border-radius: 10px;
+  margin:0 10px 10px 0;
+  background: url(../images/im0.jpg) no-repeat;
+  background-size:contain;
+}
+.card:nth-child(5) {
+  clear: left;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+}
+.name {
+  color: #F56991;
+
+}
+span{
+  color:red;
+}
+
+#message .levelup {
+  font-size: 100px;
+  font-weight: bold;
+  color: #efb6e2;
+  background-image: url(../images/newlevel.gif);
+  background-repeat:no-repeat;
+  background-size:contain;
+  margin-left: 400px;
+  padding: 50px;
+}
+
+.clearfix:after {
+        visibility: hidden;
+        display: block;
+        content: " ";
+        clear: both;
+        height: 0;
+        font-size: 0;
+      }
