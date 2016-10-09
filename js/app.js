@@ -51,6 +51,9 @@ function isMatch(selectedCards) {
 var won = false;
 
 function resetBoard() {
+	if(won){
+		confetti.clear();
+	}
 	won = false;
 	var bodyElements = document.getElementsByTagName('body');
 	bodyElements[0].className = 'level-' + level;
@@ -70,6 +73,8 @@ function resetBoard() {
 
 var glissando = new Audio("sounds/harp_chord_glissando.mp3");
 
+var matchSound = new Audio ("sounds/match.mp3");
+
 function isTwoCards() {
 
   if (!safeToPlay) {
@@ -88,6 +93,7 @@ function isTwoCards() {
 
     if (isMatch(cardsInPlay)) {
     	messageDiv.innerHTML = "whoop whoop!";
+			matchSound.play();
     	cardsInPlay = [];
 
     	totalMatches += 1;
@@ -96,6 +102,7 @@ function isTwoCards() {
 
 				if (level == levelPairs.length-1) {
 					messageDiv.innerHTML = "<h2>h o o r r a y !</h2>";
+					confetti.start();
 					won =  true;
 				}
 				else{
