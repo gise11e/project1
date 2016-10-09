@@ -73,7 +73,7 @@ function resetBoard() {
 
 var glissando = new Audio("sounds/harp_chord_glissando.mp3");
 
-var matchSound = new Audio ("sounds/match.mp3");
+var matchSound = new Audio ("sounds/match2.mp3");
 
 function isTwoCards() {
 
