@@ -88,6 +88,10 @@ function isTwoCards() {
 
   var typeOfCard = cardElement.getAttribute('data-card');
 
+	if (cardsInPlay.length == 1 && cardElement === cardsInPlay[0]) {
+		return;
+	}
+
   cardsInPlay.push(cardElement);
 
   cardElement.innerHTML = '<img src="images/' + typeOfCard + '.gif" alt="' + typeOfCard + ' playing card"/>';
@@ -95,6 +99,10 @@ function isTwoCards() {
   if (cardsInPlay.length == 2) {
 
     if (isMatch(cardsInPlay)) {
+
+			cardsInPlay[0].removeEventListener('click', isTwoCards);
+			cardsInPlay[1].removeEventListener('click', isTwoCards);
+
     	messageDiv.innerHTML = "whoop whoop!";
 			matchSound.play();
     	cardsInPlay = [];
@@ -104,7 +112,7 @@ function isTwoCards() {
     	if (totalMatches == (levelPairs[level])) {
 
 				if (level == levelPairs.length-1) {
-					messageDiv.innerHTML = "<h2 class= 'win' > h o o r r a y, you won the game! </h2>";
+					messageDiv.innerHTML = "<h2 class= 'win' > door unlocked, h o o r r a y! </h2>";
 					winGame.play();
 					confetti.start();
 					won =  true;
