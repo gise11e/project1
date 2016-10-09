@@ -75,6 +75,9 @@ var glissando = new Audio("sounds/harp_chord_glissando.mp3");
 
 var matchSound = new Audio ("sounds/match2.mp3");
 
+var winGame = new Audio ("sounds/win.mp3");
+
+
 function isTwoCards() {
 
   if (!safeToPlay) {
@@ -101,9 +104,12 @@ function isTwoCards() {
     	if (totalMatches == (levelPairs[level])) {
 
 				if (level == levelPairs.length-1) {
-					messageDiv.innerHTML = "<h2>h o o r r a y !</h2>";
+					messageDiv.innerHTML = "<h2 class= 'win' > h o o r r a y, you won the game! </h2>";
+					winGame.play();
 					confetti.start();
 					won =  true;
+					transitionOut(resetBoard);
+					glissando.play();
 				}
 				else{
 				  messageDiv.innerHTML = '<div class="levelup"> level ^ ! </div>';

@@ -106,6 +106,20 @@ span{
   float: right;
 }
 
+.win {
+  background-image: url(../images/newlevel.gif);
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position: right center;
+  margin-left: 200px;
+  margin-right: 80px;
+  padding: 30px;
+  padding-right: 250px;
+  float: right;
+}
+
+}
+
 .clearfix:after {
         visibility: hidden;
         display: block;
