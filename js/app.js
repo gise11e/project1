@@ -1,4 +1,5 @@
 
+
 var gameBoard = document.getElementById('game-board');
 
 var cards = [];
@@ -111,15 +112,25 @@ function isTwoCards() {
 
     	if (totalMatches == (levelPairs[level])) {
 
+
 				if (level == levelPairs.length-1) {
-					messageDiv.innerHTML = "<h2 class= 'win' > door unlocked, h o o r r a y! </h2>";
+					messageDiv.innerHTML = "<h2 class= 'win' >  h o o r r a y! </h2>";
 					winGame.play();
 					confetti.start();
 					won =  true;
-					transitionOut(resetBoard);
 					glissando.play();
-				}
-				else{
+					transitionOut();
+					setTimeout(function() {
+						confetti.clear();
+						messageDiv.innerHTML = "";
+						$('#game-board').hide();
+						$('.grid').hide();
+						$('#sidebar').hide();
+						$('#game-2').removeClass('hidden');
+					}, 7000);
+
+	}
+				else {
 				  messageDiv.innerHTML = '<div class="levelup"> level ^ ! </div>';
 					level++;
 					transitionOut(resetBoard);
@@ -129,7 +140,7 @@ function isTwoCards() {
     }
 		    else {
 
-    	messageDiv.innerHTML = "hit it baby, one more time!";
+    	messageDiv.innerHTML = "&#x0727;";
 
     	safeToPlay = false;
 
@@ -188,3 +199,5 @@ function transitionOut(callback) {
 		}
 	});
 }
+
+/////GAME 2
