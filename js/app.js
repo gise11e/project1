@@ -79,6 +79,10 @@ $(function() {
 		createBoard: function() {
 			for (var i = 0; i < this.cards.length; i++) {
 				var cardElement = $('<div></div>').addClass('card').attr('data-card', this.cards[i]);
+				// var cardElementT = $('<div></div>').addClass("flip-container").attr('data-card', this.cards[i]);
+				// var cardElementT2 = $('<div></div>').addClass("flipper").attr('data-card', this.cards[i]);
+				// var cardElementT3 = $('<div></div>').addClass("front").attr('data-card', this.cards[i]);
+				// var cardElementT4 = $('<div></div>').addClass("back").attr('data-card', this.cards[i]);
 
 				cardElement.on('click', (function(that){
 					return function() {
@@ -172,9 +176,8 @@ $(function() {
 
 						// Last level
 						if (this.level == this.levelPairs.length - 1) {
-							this.message.html('<h2 class="win">h o o r a y!</h2> <h4>game two unlocked!</h4>');
+							this.message.html('<h2 class="win">new game unlocked!</h2>');
 							this.sounds.winGame.play();
-							this.sounds.glissando.play();
 							confetti.start();
 							this.hasWon = true;
 							this.transitionCards(this.resetBoard.bind(this));

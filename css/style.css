@@ -80,6 +80,11 @@ font-family: megrim, fantasy;
   font-family: wire-one, sans-serif;
   float: right;
 }
+
+#message .win {
+  font-family: megrim, fantasy;
+
+}
 .board{
   display: block;
   height: 80%;
@@ -101,6 +106,7 @@ font-family: megrim, fantasy;
   margin:0 10px 10px 0;
   background: url(../images/im0.jpg) no-repeat;
   background-size:contain;
+
 }
 .card:nth-child(5) {
   clear: left;
@@ -117,6 +123,8 @@ font-family: megrim, fantasy;
 span{
   color:red;
 }
+
+
 
 #message .levelup {
   font-size: 100px;
@@ -193,45 +201,3 @@ span{
 
 
 /*/////////////  GAME 2 ///////////////////////////////*/
-
-
-#square2 {
-  height: 250px;
-  width: 311px;
-  padding: 20px;
-  margin:10px;
-  background-color: #a8d6d1;
-  background: url(../images/sur4.gif) no-repeat;
-  background-size: contain;
-  float: left;
-}
-
-#square3 {
-  height: 250px;
-  width: 311px;
-  padding: 20px;
-  background-color: #a8d6d1;
-  background: url(../images/sur3.gif) no-repeat;
-  background-size: contain;
-  float: left;
-}
-
-#square4 {
-  height: 200px;
-  width: 280px;
-  padding: 20px;
-  background-color: #a8d6d1;
-  background: url(../images/sur2.gif) no-repeat;
-  background-size: contain;
-  float: left;
-}
-
-#square5 {
-  height: 250px;
-  width: 311px;
-  padding: 20;
-  background-color: #a8d6d1;
-  background: url(../images/sur5.gif) no-repeat;
-  background-size: contain;
-  float: right;
-}*/
