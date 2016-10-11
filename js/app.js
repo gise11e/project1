@@ -172,7 +172,7 @@ $(function() {
 
 						// Last level
 						if (this.level == this.levelPairs.length - 1) {
-							this.message.html('<h2 class="win">h o o r a y!</h2>');
+							this.message.html('<h2 class="win">h o o r a y!</h2> <h4>game two unlocked!</h4>');
 							this.sounds.winGame.play();
 							this.sounds.glissando.play();
 							confetti.start();
