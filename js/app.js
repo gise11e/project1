@@ -78,11 +78,15 @@ $(function() {
 
 		createBoard: function() {
 			for (var i = 0; i < this.cards.length; i++) {
-				var cardElement = $('<div></div>').addClass('card').attr('data-card', this.cards[i]);
-				// var cardElementT = $('<div></div>').addClass("flip-container").attr('data-card', this.cards[i]);
-				// var cardElementT2 = $('<div></div>').addClass("flipper").attr('data-card', this.cards[i]);
-				// var cardElementT3 = $('<div></div>').addClass("front").attr('data-card', this.cards[i]);
-				// var cardElementT4 = $('<div></div>').addClass("back").attr('data-card', this.cards[i]);
+
+				var cardHTML = '<div class="card">';
+				cardHTML += '<div class="flipper">';
+				cardHTML += '<div class="front"><img src="images/' + this.cards[i] + '.gif" /></div>';
+				cardHTML += '<div class="back"></div>';
+				cardHTML += '</div>';
+				cardHTML += '</div>';
+
+				var cardElement = $(cardHTML);
 
 				cardElement.on('click', (function(that){
 					return function() {
@@ -121,7 +125,6 @@ $(function() {
 			var cardsOnBoard = $('.card');
 			var that = this;
 			$.each(cardsOnBoard, function(i, card) {
-				$(card).html('');
 				$(card).attr('data-card', that.cards[i]);
 			});
 		},
@@ -156,7 +159,8 @@ $(function() {
 
 			this.cardsInPlay.push(cardElement);
 
-			cardElement.html('<img src="images/' + typeOfCard + '.gif" alt="' + typeOfCard + ' playing card"/>');
+			cardElement.addClass('flipped');
+			// cardElement.html('<img src="images/' + typeOfCard + '.gif" alt="' + typeOfCard + ' playing card"/>');
 
 			if (this.cardsInPlay.length == 2) {
 				if (this.isMatch(this.cardsInPlay)) {
@@ -197,8 +201,8 @@ $(function() {
 					// turn both cards back over after 1 second (1000ms).
 		    	setTimeout((function(that) {
 						return function() {
-							that.cardsInPlay[0].html('');
-							that.cardsInPlay[1].html('');
+							that.cardsInPlay[0].removeClass('flipped');
+							that.cardsInPlay[1].removeClass('flipped');
 							that.cardsInPlay = [];
 							that.safeToPlay = true;
 						};
