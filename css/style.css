@@ -1,4 +1,3 @@
-
 html {
   cursor: url(../images/smiley.png),auto;
   background-image: url(../images/sur8.gif);
@@ -7,19 +6,6 @@ html {
 
 }
 
-.level-1 .board {
-  max-width: 900px;
-  margin: 0px 10px 0 20px;
-  width: 70%;
-
-}
-
-.level-2 .board {
-  max-width: 1200px;
-  margin: 0 10px 0 10px;
-  width: 90%;
-
-}
 
 h1{
   color: #efb6e2;
@@ -68,11 +54,13 @@ font-family: megrim, fantasy;
 #sidebar {
   color: #efb6e2;
   font-family: wire-one, sans-serif;
-  font-size: 40px;
+  font-size: 80px;
   border: 5px dash #efb6e2;
-  float: left;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 20%;
   list-style: none;
-  margin-right: 25px;
+  list-style: none;
 
 }
 
@@ -85,17 +73,16 @@ font-family: megrim, fantasy;
 }
 
 #message .win {
-  font-family: megrim, fantasy;
+  font-family: wire-one, sans-serif;
 
 }
 .board{
   display: block;
   height: 80%;
   width: 100%;
-  max-width: 1111px;
-  margin: 0 25px 0 20px;
+  max-width: 800px;
+  margin:5% 20%;
   overflow: hidden;
-  width: 90%;
 
 }
 

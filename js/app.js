@@ -48,7 +48,7 @@ $(function() {
 		sidebar: $('#sidebar'),
 		cards: [],
 		level: 0,
-		levelPairs: [3, 5, 7],
+		levelPairs: [7],
 		cardTypes: ["im1", "im2", "im3", "im4","im5", "im6", "im7"],
 		cardsInPlay: [],
 		safeToPlay: true,
@@ -62,6 +62,7 @@ $(function() {
 		},
 
 		shuffle: function(arr) {
+
 		  var currentIndex = arr.length, temporaryValue, randomIndex;
 		  // While there remain elements to shuffle...
 		  while (0 !== currentIndex) {
@@ -160,7 +161,6 @@ $(function() {
 			this.cardsInPlay.push(cardElement);
 
 			cardElement.addClass('flipped');
-			// cardElement.html('<img src="images/' + typeOfCard + '.gif" alt="' + typeOfCard + ' playing card"/>');
 
 			if (this.cardsInPlay.length == 2) {
 				if (this.isMatch(this.cardsInPlay)) {
@@ -182,12 +182,11 @@ $(function() {
 						if (this.level == this.levelPairs.length - 1) {
 							this.message.html('<h2 class="win">new game unlocked!</h2>');
 							this.sounds.winGame.play();
-							confetti.start();
 							this.hasWon = true;
 							this.transitionCards(this.resetBoard.bind(this));
 						}
 						else {
-						  this.message.html('<div class="levelup"> level ^ ! </div>');
+						  this.message.html('<div class="levelup"> "" </div>');
 							this.level++;
 							this.transitionCards(this.resetBoard.bind(this));
 							this.sounds.glissando.play();
