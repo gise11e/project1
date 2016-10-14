@@ -184,28 +184,6 @@ span{
         font-size: 0;
       }
 
-.grid {
-  width: 1111px;
-  margin: 0 0 60px 0 auto;
-  padding: 0;
-  list-style: none;
-}
-
-.grid li {
-  width: 50px;
-  height: 100px;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-
-  #confetti {
-    background: transparent;
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-  }
 
 .hidden {
   display: none;
